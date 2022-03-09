@@ -3,6 +3,7 @@ import java.awt.FlowLayout;
 import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.Color;
+import java.awt.event.*;
 class button extends Frame{
     Button b1;
     Button b2;
@@ -27,12 +28,12 @@ class button extends Frame{
 		b1.setBackground(Color.BLUE);
 		b1.setForeground(Color.WHITE);
 		
-		b1.setEnabled(false);
+		b1.setEnabled(true);
 		
 		//hiding button 
 		//b1.setVisible(false);
 		//b1.show(false);
-		
+		b1.addActionListener(new myEvent());
         add(b1);
         add(b2);
     }
@@ -40,3 +41,8 @@ public static void main(String [] args){
     button b=new button();
     }        
     }
+class myEvent implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+	System.out.println("button is clicked");
+}
+}
